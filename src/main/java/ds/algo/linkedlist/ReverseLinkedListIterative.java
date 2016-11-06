@@ -7,27 +7,21 @@ public class ReverseLinkedListIterative {
 
     public static void main(String[] args){
 
-        Node a = new Node(4);
-        Node b = new Node(1);
-        Node c = new Node(3);
-        Node d = new Node(7);
-        Node e = new Node(5);
-        Node f = new Node(2);
-        Node g = new Node(6);
-        Node h = new Node(9);
-        Node i = new Node(8);
-        Node j = new Node(10);
+        Node a = Node.setupData();
 
-        a.nextNode = b;
-        b.nextNode = c;
-        c.nextNode = d;
-        d.nextNode = e;
-        e.nextNode = f;
-        f.nextNode = g;
-        g.nextNode = h;
-        h.nextNode = i;
-        i.nextNode = j;
+        Node r = reverseLinkedList(a);
+        r.printNodeTree();
+    }
 
-        a.printNodeTree();
+    private static Node reverseLinkedList(Node head){
+
+        Node next = null, previous=null, current=head;
+        while(current != null){
+            next = current.nextNode;
+            current.nextNode=previous;
+            previous=current;
+            current=next;
+        }
+        return previous;
     }
 }
