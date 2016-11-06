@@ -1,4 +1,4 @@
-package ds.algo.minmax;
+package ds.algo.array;
 
 /**
  * Created by sp1ffygeek on 11/5/16.
